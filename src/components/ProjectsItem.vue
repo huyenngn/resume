@@ -6,8 +6,9 @@
             {{tech}}
         </div>
         <div >
-            <a :href="project.github"></a><img class="icon" v-if="project.github" src="/src/assets/github.png" />
-            <a :href="project.link"></a><img class="icon"  v-if="project.link" src="/src/assets/link.png" />
+            <a :href="project.github"><img class="icon" v-if="project.github" src="/src/assets/github.png" /></a>
+            <a :href="project.git"><img class="icon" v-if="project.git" src="/src/assets/git.png" /></a>
+            <a :href="project.link"><img class="icon"  v-if="project.link" src="/src/assets/link.png" /></a>
         </div>
     </div>
 </template>
@@ -30,6 +31,10 @@ export default {
     font-weight: 500;
     margin-bottom: 0.4rem;
     color: var(--color-heading);
+  }
+
+  a:hover {
+    background-color: var(--color-background);
   }
 
   .icon {

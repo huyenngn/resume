@@ -26,7 +26,7 @@ nav {
     background: var(--color-background);
     top: 0;
     right: 0;
-    margin: 1em 2em;
+    padding: 1em 2em;
     font-size: 1.125rem;
 }
 
@@ -39,7 +39,7 @@ nav ul {
 }
 
 nav ul li {
-    padding: 0;
+    /* padding: 0; */
     flex-grow: 1;
     justify-content: space-evenly;
     min-width: 0;

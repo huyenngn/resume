@@ -56,7 +56,6 @@ export default {
 }
 
 .button {
-    /* display: inline-flex; */
     border: 1px solid var(--color-border);
     background: var(--color-background);
     border-radius: 8px;
@@ -65,7 +64,8 @@ export default {
 }
 
 .button:hover {
-    background: var(--color-border);
+    padding: 3px 8px;
+    border: 3px solid var(--color-border);
 }
 
 input:checked+div {
