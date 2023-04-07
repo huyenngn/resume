@@ -2,7 +2,7 @@
   <header>
     <div class="intro">
       <h1>
-        <a href="/"><img alt="Logo" class="logo" :src=getImgUrl(logo) /></a>
+        <a href="/"><img alt="Logo" class="logo" src="/src/assets/link.png" /></a>
         {{ fullName }}
       </h1>
     </div>
@@ -13,17 +13,8 @@
 <script>
 export default {
   name: "Header",
-  methods: {
-    getImgUrl(img) {
-      return "/src/assets/" + img;
-    },
-  },
   props: {
     fullName: {
-      type: String,
-      required: true
-    },
-    logo: {
       type: String,
       required: true
     },

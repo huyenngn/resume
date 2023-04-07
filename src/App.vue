@@ -1,7 +1,7 @@
 <template>
       <NavBar :links="links" />
   <main>
-      <Header :fullName="fullName" :logo="logo" />
+      <Header :fullName="fullName" />
     <Info />
   </main>
 </template>
@@ -21,7 +21,6 @@ export default {
     data() {
     return {
       fullName: "Huyen Nguyen",
-      logo: "logo.png",
       links: [
         {
           text: "Education",
