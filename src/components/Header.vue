@@ -15,7 +15,7 @@ export default {
   name: "Header",
   methods: {
     getImgUrl(img) {
-      return "src/assets/" + img;
+      return "/src/assets/" + img;
     },
   },
   props: {

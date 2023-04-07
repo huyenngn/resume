@@ -6,8 +6,8 @@
             {{tech}}
         </div>
         <div >
-            <a :href="project.github"></a><img class="icon" v-if="project.github" src="src/assets/github.png" />
-            <a :href="project.link"></a><img class="icon"  v-if="project.link" src="src/assets/link.png" />
+            <a :href="project.github"></a><img class="icon" v-if="project.github" src="/src/assets/github.png" />
+            <a :href="project.link"></a><img class="icon"  v-if="project.link" src="/src/assets/link.png" />
         </div>
     </div>
 </template>
