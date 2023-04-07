@@ -2,7 +2,7 @@
   <header>
     <div class="intro">
       <h1>
-        <a href="/"><img alt="Logo" class="logo" :src="getImgUrl(logo)" /></a>
+        <a href="/"><img alt="Logo" class="logo" :src=getImgUrl(logo) /></a>
         {{ fullName }}
       </h1>
     </div>
