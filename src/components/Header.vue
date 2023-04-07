@@ -46,6 +46,7 @@ h1 {
   float: left;
   width: 32px;
   height: 32px;
+  top: 5px;
 }
 
 @media (min-width: 1024px) {

@@ -20,7 +20,7 @@ export default {
     },
     data() {
     return {
-      fullName: "Sofia Nguyen",
+      fullName: "Huyen Nguyen",
       logo: "logo.png",
       links: [
         {
@@ -48,6 +48,13 @@ export default {
 <style scoped>
 main {
   margin: 0 auto;
+  max-width: 600px;
+}
+
+@media (min-width: 1024px) {
+  main {
   max-width: 700px;
+}
+
 }
 </style>

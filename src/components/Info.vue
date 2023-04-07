@@ -8,9 +8,9 @@ import SupportIcon from './icons/IconSupport.vue'
 </script>
 
 <template>
-  <InfoItem>
+  <InfoItem  id="education">
     <template #icon>
-      <DocumentationIcon id="education" />
+      <DocumentationIcon />
     </template>
     <template #heading>Education</template>
     <ul>
@@ -19,27 +19,27 @@ import SupportIcon from './icons/IconSupport.vue'
     </ul>
   </InfoItem>
 
-  <InfoItem>
+  <InfoItem id="work">
     <template #icon>
-      <ToolingIcon id="work" />
+      <ToolingIcon />
     </template>
     <template #heading>Work Experience</template>
     *crickets* hire me, please 🥺.
   </InfoItem>
 
-  <InfoItem>
+  <InfoItem id="projects">
     <template #icon>
-      <SupportIcon id="projects" />
+      <SupportIcon />
     </template>
     <template #heading>Personal Projects</template>
     <Projects />
   </InfoItem>
 
-  <InfoItem>
+  <InfoItem id="contact">
     <template #icon>
-      <CommunityIcon id="contact" />
+      <CommunityIcon />
     </template>
     <template #heading>Contact</template>
-    <li><div class="bold">E-mail: </div><a href="mailto:test@gmail.com">test@gmail.com</a></li>
+    <li><div class="bold">E-mail: </div><a href="mailto:nganhuyennguyenthi@gmail.com">nganhuyennguyenthi@gmail.com</a></li>
   </InfoItem>
 </template>

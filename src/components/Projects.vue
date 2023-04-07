@@ -1,7 +1,7 @@
 <template>
-    <Filter />
-    <div v-for="(project, index) in projects" :key="index">
-        <Item v-bind:project="project" v-bind:class="{ card: index!=projects.length-1 }"></Item>
+    <Filter @filter-projects="updateFilterList" />
+    <div v-for="(project, index) in filteredProjects" :key="index">
+        <Item v-bind:project="project" v-bind:class="{ card: index != projects.length - 1 }"></Item>
     </div>
 </template>
 
@@ -16,22 +16,15 @@ export default {
         Item,
     },
     methods: {
-        updateFilterString(filter) {
-            this.filterString = filter;
+        updateFilterList(filter) {
+            this.filterList = filter;
         },
     },
     computed: {
         filteredProjects() {
-            if (this.filterString.startsWith("#")) {
-                return this.chirps.filter((chirp) =>
-                    chirp.hashtags.includes(this.filterString)
-                );
-            } else {
-                return this.chirps.filter(
-                    (chirp) =>
-                        !this.filterString || chirp.category.includes(this.filterString)
-                );
-            }
+            return this.projects.filter((project) =>
+                this.filterList.every(tech => project.technologies.includes(tech))
+            );
         },
     },
     data() {
@@ -47,21 +40,21 @@ export default {
                 },
                 {
                     title: "LinuxTyper",
-                    text: "Ich habe Lust auf ein Sandwich...",
+                    text: "Auto-Typer for Linux",
                     github: "",
                     link: "",
                     technologies: ["C", "CMake", "GTK"],
                 },
                 {
                     title: "Twitter Bot",
-                    text: "Ich habe Lust auf ein Sandwich...",
+                    text: "Automated Translation Twitter Bot",
                     github: "puta",
                     link: "",
                     technologies: ["Python", "Javascript", "Google Cloud", "Docker", "AWS"],
                 },
                 {
-                    title: "Ribbon Designer Web App",
-                    text: "Ich habe Lust auf ein Sandwich...",
+                    title: "Ribbon Designer",
+                    text: "Web App for Designing Satin Ribbons for Printing",
                     github: "",
                     link: "",
                     technologies: ["Javascript", "Vue.js", "Bootstrap", "HTML", "CSS"],

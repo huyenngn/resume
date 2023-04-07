@@ -1,6 +1,9 @@
 <template>
     <div class="skills">
-        <div class="button" v-for="tech in technologies">{{tech}}</div>
+        <label v-for="tech in technologies">
+            <input type="checkbox">
+            <div class="button" @click="filterCategory(tech)">{{ tech }}</div>
+        </label>
     </div>
 </template>
 
@@ -9,7 +12,7 @@ export default {
     name: "ProjectsFilter",
     data() {
         return {
-            active: '',
+            activeCategory: [],
             technologies: [
                 "C++",
                 "C",
@@ -27,21 +30,19 @@ export default {
             ],
         }
     },
-    // methods: {
-    //     // TODO
-    //     filterCategory(category) {
-    //         this.activeCategory = category
-    //         this.$emit("filter-chirps", this.activeCategory);
-    //     },
-    //     filterHashtag() {
-    //         this.$emit("filter-chirps", this.hashtag)
-    //         this.$refs.hashinput.value = '';
-    //     },
-    //     addChirp(chirp) {
-    //         this.newChirp = chirp
-    //         this.$emit("added-chirp", this.newChirp);
-    //     }
-    // },
+    methods: {
+        filterCategory(category) {
+            const index = this.activeCategory.indexOf(category);
+            if (index < 0) {
+                this.activeCategory.push(category);
+            }
+            else {
+                this.activeCategory.splice(index, 1);
+            }
+            console.log(this.activeCategory)
+            this.$emit("filter-projects", this.activeCategory);
+        },
+    },
 }
 </script>
 
@@ -65,5 +66,13 @@ export default {
 
 .button:hover {
     background: var(--color-border);
+}
+
+input:checked+div {
+    background: var(--color-border);
+}
+
+label > input {
+    display: none;
 }
 </style>
