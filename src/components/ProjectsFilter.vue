@@ -13,22 +13,13 @@ export default {
     data() {
         return {
             activeCategory: [],
-            technologies: [
-                "C++",
-                "C",
-                "CMake",
-                "Python",
-                "Javascript",
-                "Vue.js",
-                "Bootstrap",
-                "HTML",
-                "CSS",
-                "OpenCV",
-                "GTK",
-                "Google Cloud",
-                "AWS",
-            ],
         }
+    },
+    props: {
+        technologies: {
+            type: Array,
+            required: true
+        },
     },
     methods: {
         filterCategory(category) {
@@ -48,8 +39,8 @@ export default {
 
 <style scoped>
 .skills {
+    min-width: 0;
     display: flex;
-    /* justify-content: center; */
     flex-direction: row;
     flex-wrap: wrap;
     padding-bottom: 1em;
@@ -72,7 +63,7 @@ input:checked+div {
     background: var(--color-border);
 }
 
-label > input {
+label>input {
     display: none;
 }
 </style>

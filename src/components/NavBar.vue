@@ -39,7 +39,6 @@ nav ul {
 }
 
 nav ul li {
-    /* padding: 0; */
     flex-grow: 1;
     justify-content: space-evenly;
     min-width: 0;

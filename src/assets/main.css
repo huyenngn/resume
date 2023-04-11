@@ -52,6 +52,7 @@
 *,
 *::before,
 *::after {
+  min-width: 0;
   box-sizing: border-box;
   margin: 0;
   position: relative;
@@ -91,6 +92,9 @@ a,
 ul {
   list-style-position: outside;
   padding-left: 1em;
+}
+.nooverflow {
+  min-width: 0;
 }
 
 .bold {

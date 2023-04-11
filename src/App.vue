@@ -1,7 +1,7 @@
 <template>
       <NavBar :links="links" />
   <main>
-      <Header :fullName="fullName" />
+    <Header :fullName="fullName" />
     <Info />
   </main>
 </template>
@@ -47,13 +47,18 @@ export default {
 <style scoped>
 main {
   margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 720px) {
+  main {
   max-width: 600px;
+}
 }
 
 @media (min-width: 1024px) {
   main {
   max-width: 700px;
 }
-
 }
 </style>

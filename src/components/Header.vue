@@ -11,15 +11,15 @@
 </template>
 
 <script>
-export default {
-  name: "Header",
-  props: {
-    fullName: {
-      type: String,
-      required: true
-    },
-  }
-};
+  export default {
+    name: "Header",
+    props: {
+      fullName: {
+        type: String,
+        required: true
+      },
+    }
+  };
 </script>
 
 <style scoped>

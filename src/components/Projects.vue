@@ -1,5 +1,5 @@
 <template>
-    <Filter @filter-projects="updateFilterList" />
+    <Filter @filter-projects="updateFilterList" :technologies="getTechnologies()" />
     <div v-for="(project, index) in filteredProjects" :key="index">
         <Item v-bind:project="project" v-bind:class="{ card: index != projects.length - 1 }"></Item>
     </div>
@@ -16,6 +16,17 @@ export default {
         Item,
     },
     methods: {
+        getTechnologies() {
+            let technologies = [];
+            this.projects.forEach(project => {
+                project.technologies.forEach(tech => {
+                    if (!technologies.includes(tech)) {
+                        technologies.push(tech)
+                    }
+                });
+            });
+            return technologies;
+        },
         updateFilterList(filter) {
             this.filterList = filter;
         },
@@ -53,7 +64,7 @@ export default {
                     github: "https://github.com/huyenngn/TwitterBot",
                     git: "",
                     link: "",
-                    technologies: ["Python", "Javascript", "Google Cloud", "Docker", "AWS"],
+                    technologies: ["Python", "Javascript", "Twitter RESTful API", "Google Cloud", "Docker", "AWS"],
                 },
                 {
                     title: "🎀 Ribbon Designer",
@@ -71,6 +82,7 @@ export default {
 
 <style>
 .card {
+    min-width: 0;
     padding-bottom: 5px;
     margin-bottom: 5px;
     border-bottom: 1px solid var(--color-border);

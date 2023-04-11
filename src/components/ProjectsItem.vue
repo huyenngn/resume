@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="nooverflow">
         <h4>{{ project.title }}</h4>
         <div>{{ project.text }}</div>
         <div class="technology" v-for="tech in project.technologies">
@@ -14,15 +14,15 @@
 </template>
 
 <script>
-export default {
-    name: "ChirpContainer",
-    props: {
-      project: {
-        type: Object,
-        required: true
+  export default {
+      name: "ChirpContainer",
+      props: {
+        project: {
+          type: Object,
+          required: true
+        }
       }
-    }
-  };
+    };
 </script>
 
 <style scoped>
@@ -44,6 +44,7 @@ export default {
   }
 
   .technology {
+    min-width: 0;
     display: inline;
     margin-right: 1rem;
     color: grey;

@@ -1,10 +1,10 @@
 <script setup>
-import InfoItem from './InfoItem.vue'
-import Projects from './Projects.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
+  import InfoItem from './InfoItem.vue'
+  import Projects from './Projects.vue'
+  import DocumentationIcon from './icons/IconDocumentation.vue'
+  import ToolingIcon from './icons/IconTooling.vue'
+  import CommunityIcon from './icons/IconCommunity.vue'
+  import SupportIcon from './icons/IconSupport.vue'
 </script>
 
 <template>
