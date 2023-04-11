@@ -1,7 +1,7 @@
 <template>
     <Filter @filter-projects="updateFilterList" :technologies="getTechnologies()" />
     <div v-for="(project, index) in filteredProjects" :key="index">
-        <Item v-bind:project="project" v-bind:class="{ card: index != projects.length - 1, nooverflow: index == projects.length - 1 }"></Item>
+        <Item v-bind:project="project" v-bind:class="{ card: index != projects.length - 1, lastcard: index == projects.length - 1 }"></Item>
     </div>
 </template>
 
@@ -87,5 +87,9 @@ export default {
     margin-bottom: 5px;
     border-bottom: 1px solid var(--color-border);
     background: var(--color-background);
+}
+
+.lastcard {
+  min-width: 0;
 }
 </style>

@@ -93,9 +93,6 @@ ul {
   list-style-position: outside;
   padding-left: 1em;
 }
-.nooverflow {
-  min-width: 0;
-}
 
 .bold {
   display: inline;

@@ -63,4 +63,10 @@ margin: 1em auto;
     margin-right: 1rem;
     color: grey;
   }
+
+  a {
+text-decoration: none;
+  color: var(--color-text);
+  transition: 0.4s;
+}
 </style>
