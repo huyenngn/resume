@@ -1,16 +1,16 @@
 <template>
-    <div class="nooverflow">
         <h4>{{ project.title }}</h4>
         <div>{{ project.text }}</div>
+           <div class="technologies">
         <div class="technology" v-for="tech in project.technologies">
             {{tech}}
         </div>
+            </div>
         <div >
             <a :href="project.github"><img class="icon" v-if="project.github" src="/src/assets/github.png" /></a>
             <a :href="project.git"><img class="icon" v-if="project.git" src="/src/assets/git.png" /></a>
             <a :href="project.link"><img class="icon"  v-if="project.link" src="/src/assets/link.png" /></a>
         </div>
-    </div>
 </template>
 
 <script>
@@ -26,6 +26,11 @@
 </script>
 
 <style scoped>
+.technologies {
+display: flex;
+flex-wrap: wrap;
+}
+
   h4 {
     font-size: 1em;
     font-weight: 500;
@@ -44,8 +49,6 @@
   }
 
   .technology {
-    min-width: 0;
-    display: inline;
     margin-right: 1rem;
     color: grey;
   }
