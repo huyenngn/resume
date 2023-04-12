@@ -64,7 +64,7 @@ export default {
                     github: "https://github.com/huyenngn/TwitterBot",
                     git: "",
                     link: "",
-                    technologies: ["Python", "Javascript", "Twitter RESTful API", "Google Cloud", "Docker", "AWS"],
+                    technologies: ["Python", "Javascript", "Google Cloud", "Docker", "AWS"],
                 },
                 {
                     title: "🎀 Ribbon Designer",
@@ -73,6 +73,14 @@ export default {
                     git: "",
                     link: "https://tranquil-taffy-c57164.netlify.app/",
                     technologies: ["Javascript", "Vue.js", "Bootstrap", "HTML", "CSS"],
+                },
+                {
+                    title: "🌐 Dynamic Portfolio Website",
+                    text: "This Website",
+                    github: "https://github.com/huyenngn/resume",
+                    git: "",
+                    link: "https://resume-huyenngn.vercel.app/",
+                    technologies: ["Javascript", "Vue.js", "HTML", "CSS"],
                 },
             ],
         };
