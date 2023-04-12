@@ -23,7 +23,6 @@ nav {
     display: flex;
     justify-content: flex-end;
     position: sticky;
-    background: var(--color-background);
     top: 0;
     right: 0;
     padding: 1em 2em;
@@ -31,6 +30,7 @@ nav {
 }
 
 nav ul {
+    background: var(--color-background);
     list-style: none;
     display: flex;
     gap: 1rem;

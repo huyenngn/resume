@@ -9,8 +9,8 @@
             </div>
         <div class="technologies" >
             <a :href="project.github"><div class="icon" v-if="project.github"><IconGithub /></div></a>
-            <a :href="project.git"><img class="icon" v-if="project.git" src="/src/assets/git.png" /></a>
-            <a :href="project.link"><img class="icon"  v-if="project.link" src="/src/assets/link.png" /></a>
+            <a :href="project.git"><div class="icon" v-if="project.git"><IconGit /></div></a>
+            <a :href="project.link"><div class="icon" v-if="project.link"><IconLink /></div></a>
         </div>
         
   </div>
@@ -18,7 +18,9 @@
 </template>
 
 <script>
+import IconGit from './icons/IconGit.vue';
 import IconGithub from './icons/IconGithub.vue';
+import IconLink from './icons/IconLink.vue';
 
   export default {
     name: "ChirpContainer",
@@ -28,7 +30,7 @@ import IconGithub from './icons/IconGithub.vue';
             required: true
         }
     },
-    components: { IconGithub }
+    components: { IconGithub, IconGit, IconLink }
 };
 </script>
 
