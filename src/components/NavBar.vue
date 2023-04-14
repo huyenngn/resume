@@ -24,6 +24,11 @@ export default {
       theme: "",
     }
   },
+  computed() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      this.theme = 'darkMode';
+    }
+  },
   mounted() {
     let localTheme = localStorage.getItem('theme');
     document.documentElement.setAttribute('data-theme', localTheme);
@@ -46,7 +51,7 @@ nav {
   align-items: baseline;
   top: 0;
   right: 0;
-  padding: 1em 2em;
+  padding: 1rem 2rem;
   font-size: 1.125rem;
 }
 
@@ -59,7 +64,7 @@ nav ul {
 @media (max-width: 1024px) {
   nav {
     position: relative;
-    padding: 0;
+    padding: 5px 10px;
   }
 
   nav ul {
