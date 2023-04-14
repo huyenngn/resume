@@ -26,7 +26,7 @@ export default {
   },
   computed() {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      this.theme = 'darkMode';
+      toggleTheme();
     }
   },
   mounted() {
