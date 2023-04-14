@@ -4,6 +4,10 @@
             <input type="checkbox">
             <div class="button" @click="filterCategory(tech)">{{ tech }}</div>
         </label>
+        <label>
+            <input type="button">
+            <div class="button" @click="resetFilter()"> &#10060; </div>
+        </label>
     </div>
 </template>
 
@@ -33,6 +37,12 @@ export default {
             console.log(this.activeCategory)
             this.$emit("filter-projects", this.activeCategory);
         },
+        resetFilter() {
+            this.activeCategory = []
+            document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+            console.log(this.activeCategory)
+            this.$emit("filter-projects", this.activeCategory);
+        },
     },
 }
 </script>
@@ -44,23 +54,6 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     padding-bottom: 1em;
-}
-
-.button {
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: 8px;
-    padding: 5px 10px;
-    margin: 5px 5px 5px 0;
-}
-
-.button:hover {
-    padding: 3px 8px;
-    border: 3px solid var(--color-border);
-}
-
-input:checked+div {
-    background: var(--color-border);
 }
 
 label>input {

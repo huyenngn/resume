@@ -23,7 +23,7 @@ import IconGithub from './icons/IconGithub.vue';
 import IconLink from './icons/IconLink.vue';
 
   export default {
-    name: "ChirpContainer",
+    name: "ProjectsItem",
     props: {
         project: {
             type: Object,
@@ -48,10 +48,6 @@ margin: 1em auto;
     color: var(--color-heading);
   }
 
-  a:hover {
-    background-color: var(--color-background);
-  }
-
   .icon {
     width: 1rem;
     height: 1rem;
@@ -67,8 +63,10 @@ margin: 1em auto;
   }
 
   a {
-text-decoration: none;
   color: var(--color-text);
-  transition: 0.4s;
 }
+
+a:hover {
+    background-color: var(--color-background);
+  }
 </style>
