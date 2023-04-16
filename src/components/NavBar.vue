@@ -25,14 +25,14 @@ export default {
     }
   },
   computed() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia && screen && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       this.theme = 'darkMode';
-      document.documentElement.setAttribute('data-theme', this.theme);
-      localStorage.setItem('theme', this.theme);
+      document.documentElement.setAttribute('data-theme', 'darkMode');
     }
   },
   mounted() {
     let localTheme = localStorage.getItem('theme');
+    this.theme = localTheme;
     document.documentElement.setAttribute('data-theme', localTheme);
   },
   methods: {
