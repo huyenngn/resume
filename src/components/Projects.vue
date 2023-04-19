@@ -1,8 +1,15 @@
 <template>
     <Filter @filter-projects="updateFilterList" :technologies="getTechnologies()" />
-    <div v-for="(project, index) in filteredProjects" :key="index">
-        <Item :project="project" :class="{ card: index != projects.length - 1, lastcard: index == projects.length - 1 }"></Item>
-    </div>
+    <transition name="fade" tag="div">
+        <div v-if="toggle">
+            <Item v-for="(project, index) in filteredProjects" :key="index" :project="project"
+                :class="{ card: index != projects.length - 1, lastcard: index == projects.length - 1 }"></Item>
+        </div>
+        <div v-else>
+            <Item v-for="(project, index) in filteredProjects" :key="index" :project="project"
+                :class="{ card: index != projects.length - 1, lastcard: index == projects.length - 1 }"></Item>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -29,6 +36,7 @@ export default {
         },
         updateFilterList(filter) {
             this.filterList = filter;
+            this.toggle = !this.toggle;
         },
     },
     computed: {
@@ -40,6 +48,7 @@ export default {
     },
     data() {
         return {
+            toggle: true,
             filterList: [],
             projects: [
                 {
@@ -48,7 +57,7 @@ export default {
                     github: "",
                     git: "https://git.tu-berlin.de/sees-driving-1/raspberrypi",
                     link: "https://www.tu.berlin/sese/studium-lehre/studierendenprojeke\#c719986",
-                    technologies: ["C++", "CMake", "OpenCV"],
+                    technologies: ["C", "C++", "CMake", "OpenCV"],
                 },
                 {
                     title: "💻 LinuxTyper",
@@ -97,6 +106,42 @@ export default {
 }
 
 .lastcard {
-  min-width: 0;
+    min-width: 0;
 }
-</style>
+
+.fade-enter-active {
+    animation: fade-in .5s;
+}
+
+.fade-leave-active {
+    animation: fade-out .5s;
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}</style>
