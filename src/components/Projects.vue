@@ -110,20 +110,20 @@ export default {
 }
 
 .fade-enter-active {
-    animation: fade-in .5s;
+    animation: fade .5s;
 }
 
 .fade-leave-active {
-    animation: fade-out .5s;
+    animation: fade .5s reverse;
 }
 
 
-@keyframes fade-in {
+@keyframes fade {
     0% {
         opacity: 0;
     }
 
-    60% {
+    50% {
         opacity: 0;
     }
 
@@ -131,17 +131,4 @@ export default {
         opacity: 1;
     }
 }
-
-@keyframes fade-out {
-    0% {
-        opacity: 1;
-    }
-
-    40% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}</style>
+</style>

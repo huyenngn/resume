@@ -1,7 +1,7 @@
 <template>
     <div class="skills">
         <label v-for="tech in technologies">
-            <input type="checkbox">
+            <input type="checkbox" class="filter">
             <div class="button" @click="filterCategory(tech)">{{ tech }}</div>
         </label>
         <label>
@@ -39,7 +39,7 @@ export default {
         },
         resetFilter() {
             this.activeCategory = []
-            document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+            document.querySelectorAll('input[type=checkbox].filter').forEach(el => el.checked = false);
             console.log(this.activeCategory)
             this.$emit("filter-projects", this.activeCategory);
         },

@@ -32,19 +32,26 @@ export default {
     };
   },
   mounted() {
-    if (window.matchMedia && screen && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      this.theme = "darkMode";
-      document.documentElement.setAttribute("data-theme", "darkMode");
-    }
-    else {
-      let localTheme = localStorage.getItem("theme");
+    let localTheme = localStorage.getItem("theme");
+    if (localTheme == "lightMode" || localTheme == "darkMode") {
       this.theme = localTheme;
       document.documentElement.setAttribute("data-theme", localTheme);
+      return 0;
+    }
+    if (window.matchMedia) {
+      if (screen && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        this.theme = "darkMode";
+        document.documentElement.setAttribute("data-theme", "darkMode");
+      }
+      else {
+        this.theme = "lightMode";
+        document.documentElement.setAttribute("data-theme", "lightMode");
+      }
     }
   },
   methods: {
     toggleTheme() {
-      this.theme = this.theme == "darkMode" ? "" : "darkMode";
+      this.theme = this.theme == "darkMode" ? "lightMode" : "darkMode";
       document.documentElement.setAttribute("data-theme", this.theme);
       localStorage.setItem("theme", this.theme);
     }
