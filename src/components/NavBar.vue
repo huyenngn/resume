@@ -1,12 +1,13 @@
 <template>
   <div id="modal" class="invisible">
-    <IconCross @click="toggleSettings()" />
-
+          <div class="closebtn">
+            <IconCross @click="toggleSettings()" />
+          </div>
 <div>
-      Switch Theme <ThemeSwitch @toggleTheme="toggleTheme()" :theme="this.theme" />
+      <span>Switch Theme</span> <ThemeSwitch @toggleTheme="toggleTheme()" :theme="this.theme" />
 </div>
 <div>
-  Use user theme
+  <span>Use user theme</span>
       <label class="switch" :class="{userActive: this.userChecked}">
     <input type="checkbox" @change="toggleUser()" :checked="this.userChecked" >
     <span class="slider">
@@ -51,6 +52,7 @@ export default {
   mounted() {
     let localTheme = localStorage.getItem("theme");
     if (localTheme == "userMode") {
+      this.userChecked = true;
       if (window.matchMedia && screen && window.matchMedia("(prefers-color-scheme: dark)").matches) {
         this.theme = "darkMode";
         document.documentElement.setAttribute("data-theme", "darkMode");
@@ -138,6 +140,23 @@ nav ul li:last-of-type {
   top: 0;
   left: 0;
   z-index: 1;
+  padding: 2rem;
+}
+
+#modal div {
+  display: flex;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.closebtn {
+  justify-content: end;
+}
+
+.closebtn > * {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 @media (max-width: 992px) {
