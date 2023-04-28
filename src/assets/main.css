@@ -112,6 +112,47 @@ input:checked+div {
   background: var(--color-border);
 }
 
+.switch {
+  position: relative;
+  border-radius: 11px;
+  display: block;
+  width: 40px;
+  height: 22px;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background-mute);
+  transition: border-color .25s, background-color .25s;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.switch:hover {
+  border-color: var(--color-border-hover);
+}
+
+.switch input {
+  display: none;
+}
+
+.switch .slider {
+  position: absolute;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  top: 1px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--color-background);
+  box-shadow: var(--color-border-hover);
+  transition: background-color .25s, transform .25s;
+}
+
+.switch input:checked+.slider {
+  transform: translateX(18px);
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);

@@ -3,11 +3,11 @@
     <transition name="fade" tag="div">
         <div v-if="toggle">
             <Item v-for="(project, index) in filteredProjects" :key="index" :project="project"
-                :class="{ card: index != projects.length - 1, lastcard: index == projects.length - 1 }"></Item>
+                class="card"></Item>
         </div>
         <div v-else>
             <Item v-for="(project, index) in filteredProjects" :key="index" :project="project"
-                :class="{ card: index != projects.length - 1, lastcard: index == projects.length - 1 }"></Item>
+                class="card"></Item>
         </div>
     </transition>
 </template>
@@ -105,8 +105,8 @@ export default {
     border-bottom: 1px solid var(--color-border);
 }
 
-.lastcard {
-    min-width: 0;
+.card:last-of-type {
+    border-bottom: 0;
 }
 
 .fade-enter-active {

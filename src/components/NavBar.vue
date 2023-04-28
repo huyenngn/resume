@@ -1,22 +1,38 @@
 <template>
-  <nav role='navigation'>
-    <label class="switch">
-      <input type="checkbox" @change="toggleTheme()" :checked="this.theme == 'darkMode' ? true : false">
-      <span class="slider">
-        <IconMoon class="switch-icon" v-if="this.theme == 'darkMode'" />
-        <IconSun class="switch-icon" v-else />
-      </span>
-    </label>
+  <div id="modal" class="invisible">
+    <IconCross @click="toggleSettings()" />
 
+<div>
+      Switch Theme <ThemeSwitch @toggleTheme="toggleTheme()" :theme="this.theme" />
+</div>
+<div>
+  Use user theme
+      <label class="switch" :class="{userActive: this.userChecked}">
+    <input type="checkbox" @change="toggleUser()" :checked="this.userChecked" >
+    <span class="slider">
+    </span>
+  </label>
+</div>
+
+  </div>
+  <nav role='navigation'>
+    <IconTheme id="theme-settings" @click="toggleSettings()" />
     <ul>
       <li v-for="link in links"><a :href="link.link">{{ link.text }}</a></li>
+      <li>
+        <ThemeSwitch @toggleTheme="toggleTheme()" :theme="this.theme"/>
+      </li>
     </ul>
+
   </nav>
 </template>
 
 <script>
+import ThemeSwitch from './ThemeSwitch.vue';
 import IconMoon from './icons/IconMoon.vue';
 import IconSun from './icons/IconSun.vue';
+import IconTheme from './icons/IconTheme.vue';
+import IconCross from './icons/IconCross.vue';
 
 export default {
   name: "NavBar",
@@ -29,17 +45,13 @@ export default {
   data() {
     return {
       theme: "",
+      userChecked: false,
     };
   },
   mounted() {
     let localTheme = localStorage.getItem("theme");
-    if (localTheme == "lightMode" || localTheme == "darkMode") {
-      this.theme = localTheme;
-      document.documentElement.setAttribute("data-theme", localTheme);
-      return 0;
-    }
-    if (window.matchMedia) {
-      if (screen && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (localTheme == "userMode") {
+      if (window.matchMedia && screen && window.matchMedia("(prefers-color-scheme: dark)").matches) {
         this.theme = "darkMode";
         document.documentElement.setAttribute("data-theme", "darkMode");
       }
@@ -47,75 +59,59 @@ export default {
         this.theme = "lightMode";
         document.documentElement.setAttribute("data-theme", "lightMode");
       }
+      return 0;
     }
+      this.theme = localTheme;
+      document.documentElement.setAttribute("data-theme", localTheme);
+      return 0;
   },
   methods: {
     toggleTheme() {
+      this.userChecked = false;
       this.theme = this.theme == "darkMode" ? "lightMode" : "darkMode";
       document.documentElement.setAttribute("data-theme", this.theme);
       localStorage.setItem("theme", this.theme);
+    },
+    toggleSettings() {
+      let cl = document.getElementById("modal").classList;
+      if (cl.contains("invisible")) {
+        cl.remove("invisible");
+      }
+      else {
+        cl.add("invisible");
+      }
+    },
+    toggleUser() {
+      this.userChecked = this.userChecked ? false : true;
+      localStorage.setItem("theme", "userMode");
+      if (window.matchMedia && screen && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.setAttribute("data-theme", "darkMode");
+      }
+      else {
+        document.documentElement.setAttribute("data-theme", "lightMode");
+      }
     }
   },
-  components: { IconMoon, IconSun }
+  components: { IconMoon, IconSun, IconTheme, ThemeSwitch, IconCross }
 };
 </script>
 
 <style scoped>
-.switch {
-  position: relative;
-  border-radius: 11px;
-  display: block;
-  width: 40px;
-  height: 22px;
-  flex-shrink: 0;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-background-mute);
-  transition: border-color .25s, background-color .25s;
-  cursor: pointer;
+.userActive {
+  background-color: hsla(160, 100%, 37%, 1);;
 }
 
-.switch:hover {
-  border-color: var(--color-border-hover);
-}
-
-.switch input {
+#theme-settings {
   display: none;
-}
-
-.switch .slider {
-  position: absolute;
-  display: flex;
-  place-items: center;
-  place-content: center;
-  top: 1px;
-  left: 1px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background-color: var(--color-background);
-  box-shadow: var(--color-border-hover);
-  transition: background-color .25s, transform .25s;
-}
-
-.switch input:checked+.slider {
-  transform: translateX(18px);
-}
-
-.switch-icon {
-  position: relative;
-  width: 12px;
-  height: 12px;
-  fill: var(--color-heading);
 }
 
 nav {
   display: flex;
   justify-content: flex-end;
   position: relative;
-  align-items: center;
   top: 0;
   right: 0;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   font-size: 1.125rem;
 }
 
@@ -123,9 +119,33 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
-@media (max-width: 1024px) {
+nav ul li:last-of-type {
+  border-left: 1px solid var(--color-border);
+}
+
+.invisible {
+  display: none;
+}
+
+#modal {
+  background-color: var(--color-background);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  #theme-settings {
+    display: block;
+    cursor: pointer;
+  }
+
   nav {
     position: relative;
     padding: 10px 10px;
