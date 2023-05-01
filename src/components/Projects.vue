@@ -60,6 +60,14 @@ export default {
                     technologies: ["C", "C++", "CMake", "OpenCV"],
                 },
                 {
+                    title: "📊 CSI Visualization on ESP32",
+                    text: "Real-time visualization of CSI on ESP32",
+                    github: "https://github.com/huyenngn/CSI-Visualization-on-ESP32",
+                    git: "",
+                    link: "",
+                    technologies: ["C", "C++", "CMake", "ESP-IDF", "TFT_eSPI"],
+                },
+                {
                     title: "💻 LinuxTyper",
                     text: "Auto-Typer for Linux",
                     github: "https://github.com/huyenngn/linuxtyper",

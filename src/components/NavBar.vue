@@ -1,19 +1,20 @@
 <template>
   <div id="modal" class="invisible">
-          <div class="closebtn">
-            <IconCross @click="toggleSettings()" />
-          </div>
-<div>
-      <span>Switch Theme</span> <ThemeSwitch @toggleTheme="toggleTheme()" :theme="this.theme" />
-</div>
-<div>
-  <span>Use user theme</span>
-      <label class="switch" :class="{userActive: this.userChecked}">
-    <input type="checkbox" @change="toggleUser()" :checked="this.userChecked" >
-    <span class="slider">
-    </span>
-  </label>
-</div>
+    <div class="closebtn">
+      <IconCross @click="toggleSettings()" />
+    </div>
+    <div>
+      <span>Switch Theme</span>
+      <ThemeSwitch @toggleTheme="toggleTheme()" :theme="this.theme" />
+    </div>
+    <div>
+      <span>Use user theme</span>
+      <label class="switch" :class="{ userActive: this.userChecked }">
+        <input type="checkbox" @change="toggleUser()" :checked="this.userChecked">
+        <span class="slider">
+        </span>
+      </label>
+    </div>
 
   </div>
   <nav role='navigation'>
@@ -21,7 +22,7 @@
     <ul>
       <li v-for="link in links"><a :href="link.link">{{ link.text }}</a></li>
       <li>
-        <ThemeSwitch @toggleTheme="toggleTheme()" :theme="this.theme"/>
+        <ThemeSwitch @toggleTheme="toggleTheme()" :theme="this.theme" />
       </li>
     </ul>
 
@@ -63,9 +64,9 @@ export default {
       }
       return 0;
     }
-      this.theme = localTheme;
-      document.documentElement.setAttribute("data-theme", localTheme);
-      return 0;
+    this.theme = localTheme;
+    document.documentElement.setAttribute("data-theme", localTheme);
+    return 0;
   },
   methods: {
     toggleTheme() {
@@ -100,7 +101,8 @@ export default {
 
 <style scoped>
 .userActive {
-  background-color: hsla(160, 100%, 37%, 1);;
+  background-color: hsla(160, 100%, 37%, 1);
+  ;
 }
 
 #theme-settings {
@@ -153,7 +155,7 @@ nav ul li:last-of-type {
   justify-content: end;
 }
 
-.closebtn > * {
+.closebtn>* {
   width: 20px;
   height: 20px;
   cursor: pointer;
