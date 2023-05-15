@@ -60,13 +60,21 @@ export default {
                     technologies: ["C", "C++", "CMake", "OpenCV"],
                 },
                 {
-                    title: "📊 Real-time CSI Visualization on ESP32",
+                    title: "📊 Real-time CSI Visualization Tool for ESP32",
                     text: "Bachelor Project Advanced Network Technologies",
                     github: "https://github.com/huyenngn/CSI-Visualization-on-ESP32",
                     git: "",
                     link: "",
                     technologies: ["C", "C++", "CMake", "ESP-IDF", "LVGL"],
                 },
+                // {
+                //     title: "📊 Smart Kitchen",
+                //     text: "Bachelor Project Ambient Assisted Living",
+                //     github: "",
+                //     git: "",
+                //     link: "",
+                //     technologies: ["Python", "Tensorflow"],
+                // },
                 {
                     title: "💻 LinuxTyper",
                     text: "Auto-Typer for Linux",
