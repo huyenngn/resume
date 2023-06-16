@@ -15,7 +15,7 @@
     <template #heading>Education</template>
     <ul>
         <li>Student at TUB (🇩🇪 Technical University of Berlin), 10/2018 entry, BSc in CE.</li>
-        <li><div class="bold">Fields of Interest: </div>Embedded Systems and Software Developemet.</li>
+        <li><div class="bold">Fields of Interest: </div>Embedded Systems and Software Developmet.</li>
     </ul>
   </InfoItem>
 
