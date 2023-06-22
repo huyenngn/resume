@@ -53,7 +53,7 @@ export default {
             projects: [
                 {
                     title: "🚗 Autonomous LEGO Car",
-                    text: "Bachelor Project Software Engineering of Embedded Systems",
+                    text: "A self-driving LEGO car that recognises road lanes and predicts the direction in which the car is turning.",
                     github: "",
                     git: "https://git.tu-berlin.de/sees-driving-1/raspberrypi",
                     link: "https://www.tu.berlin/sese/studium-lehre/studierendenprojeke\#c719986",
@@ -61,11 +61,11 @@ export default {
                 },
                 {
                     title: "📊 Real-time CSI Visualization Tool for ESP32",
-                    text: "Bachelor Project Advanced Network Technologies",
+                    text: "A tool that senses and visualises how wireless signals travel through their surroundings in real-time.",
                     github: "https://github.com/huyenngn/CSI-Visualization-on-ESP32",
                     git: "",
                     link: "",
-                    technologies: ["C", "C++", "CMake", "ESP-IDF", "LVGL"],
+                    technologies: ["C", "C++", "CMake", "FreeRTOS", "LVGL"],
                 },
                 // {
                 //     title: "📊 Smart Kitchen",
@@ -77,7 +77,7 @@ export default {
                 // },
                 {
                     title: "💻 LinuxTyper",
-                    text: "Auto-Typer for Linux",
+                    text: "A Linux application that repeatedly executes keystrokes in any specified minimised or maximised window.",
                     github: "https://github.com/huyenngn/linuxtyper",
                     git: "",
                     link: "",
@@ -85,7 +85,7 @@ export default {
                 },
                 {
                     title: "🤖 Twitter Bot",
-                    text: "Automated Translation Twitter Bot",
+                    text: "A Python script that automatically replies to my favourite Thai actor’s tweets with their English translations.",
                     github: "https://github.com/huyenngn/TwitterBot",
                     git: "",
                     link: "",
@@ -93,7 +93,7 @@ export default {
                 },
                 {
                     title: "🎀 Ribbon Designer",
-                    text: "Web App for Designing Satin Ribbons for Printing",
+                    text: "A web-based text editor, created with Vue.js for florists to design funeral ribbons.",
                     github: "https://github.com/huyenngn/RibbonDesigner",
                     git: "",
                     link: "https://tranquil-taffy-c57164.netlify.app/",
