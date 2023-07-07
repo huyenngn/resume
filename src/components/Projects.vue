@@ -77,7 +77,7 @@ export default {
                 // },
                 {
                     title: "💻 LinuxTyper",
-                    text: "A Linux application that repeatedly executes keystrokes in any specified minimised or maximised window.",
+                    text: "An auto-typer for Linux that repeatedly executes keystrokes in any specified minimised or maximised window.",
                     github: "https://github.com/huyenngn/linuxtyper",
                     git: "",
                     link: "",
@@ -93,7 +93,7 @@ export default {
                 },
                 {
                     title: "🎀 Ribbon Designer",
-                    text: "A web-based text editor, created with Vue.js for florists to design funeral ribbons.",
+                    text: "A web-based text editor, created for florists to design funeral ribbons.",
                     github: "https://github.com/huyenngn/RibbonDesigner",
                     git: "",
                     link: "https://tranquil-taffy-c57164.netlify.app/",
@@ -101,7 +101,7 @@ export default {
                 },
                 {
                     title: "🌐 Dynamic Portfolio Website",
-                    text: "This Website",
+                    text: "This Website.",
                     github: "https://github.com/huyenngn/resume",
                     git: "",
                     link: "https://resume-huyenngn.vercel.app/",
